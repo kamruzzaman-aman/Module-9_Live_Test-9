@@ -40,31 +40,41 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Size Selector'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Wrap(
-          spacing: 8,
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            for (int i = 0; i < sizes.length; i++)
-              ElevatedButton(
-                onPressed: () {
-                  buttonColor(i);
-                  showSnackBar(i);
-                },
-                child: Text(
-                  sizes[i],
-                  style: TextStyle(
-                    color: selectedIndex == i ? Colors.white : Colors.black,
-                  ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: selectedIndex == i ? Colors.orange : Colors.grey,
-                ),
-              ),
+            GridView.builder(
+              shrinkWrap: true,
+              itemCount: sizes.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+              childAspectRatio: 2
+              ), itemBuilder: (_, index){
+                return ElevatedButton(
+                    onPressed: () {
+                      buttonColor(index);
+                      showSnackBar(index);
+                    },
+                    child: Text(
+                      sizes[index],
+                      style: TextStyle(
+                        color: selectedIndex == index ? Colors.white : Colors.black,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: selectedIndex == index ? Colors.orange : Colors.grey,
+                    ),
+                  );
+            }),
           ],
         ),
       ),
