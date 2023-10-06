@@ -1,2 +1,21 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Always perform LF normalization on these files
+*.c      text
+*.cc     text
+*.cmake  text
+*.dart   text
+*.gradle text
+*.h      text
+*.html   text
+*.java   text
+*.json   text
+*.md     text
+*.py     text
+*.sh     text
+*.swift  text
+*.txt    text
+*.xml    text
+*.yaml   text
+
