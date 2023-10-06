@@ -1,5 +1,5 @@
 *.html linguist-detectable=false
-*.C++ linguist-detectable=false
+*.c++ linguist-detectable=false
 *.html linguist-documentation=false
 
 # Allow dart files in examples/ to be detectable
