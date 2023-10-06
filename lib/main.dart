@@ -43,6 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Size Selector'),
+        centerTitle: true,
       ),
       body: Center(
         child: Wrap(
